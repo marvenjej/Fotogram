@@ -11,7 +11,7 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="initGalleryFunctions()">
 
     <header>
         <img src="./assets/icons/fotogram-logo.svg" alt="Fotogram Logo">
@@ -21,18 +21,30 @@
         <h1>Dein persönliches Fotoalbum</h1>
 
         <section class="gallery" id="gallery">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
-            <img class="gallery-item" src="./assets/img/93265accae6c295655b8fd3cc1113f8c76b70797.jpg" alt="Bild aus der Photogallerie">
         </section>
 
     </main>
+
+    <dialog id="gallery-dialog" class="gallery-dialog">
+        <div class="dialog-header">
+            <h2 id="dialog-title"></h2>
+            <button class="dialog-close" onclick="closeDialog()" aria-label="Schließen">
+                <img src="./assets/icons/close.svg" alt="">
+            </button>
+        </div>
+
+        <img id="dialog-img" src="" alt="Großansicht des Bildes">
+
+        <div class="dialog-nav">
+            <button class="dialog-arrow" onclick="showPreviousPicture()" aria-label="Vorheriges Bild">
+                <img src="./assets/icons/button-left.svg" alt="">
+            </button>
+            <span id="dialog-counter"></span>
+            <button class="dialog-arrow" onclick="showNextPicture()" aria-label="Nächstes Bild">
+                <img src="./assets/icons/button-right.svg" alt="">
+            </button>
+        </div>
+    </dialog>
 
     <footer>
         <img src="./assets/icons/footer-logo.svg" alt="Developer Akedemie Logo">

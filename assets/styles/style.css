@@ -26,7 +26,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 815px;
+    min-height: 815px;
+    padding: 80px 0;
     background-color: var(--main-bg-color);
     gap: 80px;
 }
@@ -47,10 +48,78 @@ main {
     border: 2px solid rgba(18, 70, 88, 1);
 }
 
+.gallery-item {
+    cursor: pointer;
+}
+
+.gallery-dialog {
+    margin: auto;
+    width: 676px;
+    padding: 58px;
+    border: none;
+    border-radius: 48px;
+    background-color: var(--main-bg-color);
+    color: rgba(255, 255, 255, 1);
+    font-family: var(--default-font);
+}
+
+.gallery-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.gallery-dialog[open] {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.dialog-close {
+    display: flex;
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+#dialog-img {
+    width: 560px;
+    height: 375px;
+    object-fit: cover;
+}
+
+.dialog-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    font-size: 16px;
+}
+
+.dialog-arrow {
+    display: flex;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 h1 {
     font-family: var(--default-font);
-    font-size: 56px;
+    font-size: clamp(48px, 45.18px + 0.751vw, 56px);
     font-weight: 800;
+    text-align: center;
     color: rgba(255, 255, 255, 1);
 }
 
