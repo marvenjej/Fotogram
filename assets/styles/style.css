@@ -6,6 +6,7 @@
     --content-padding: 147px;
     --content-inline: max(var(--content-padding),
             calc((100% - var(--content-max)) / 2 + var(--content-padding)));
+    --gallery-item-border-radius: 16px;
 }
 
 * {
@@ -24,8 +25,26 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 815px;
     background-color: var(--main-bg-color);
+    gap: 80px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: calc(7 * 150px + 6 * 16px);
+}
+
+.gallery-item {
+    width: 150px;
+    height: 150px;
+
+    border-radius: var(--gallery-item-border-radius);
+    border: 2px solid rgba(18, 70, 88, 1);
 }
 
 h1 {
@@ -42,7 +61,7 @@ footer {
     align-items: center;
     background-color: var(--header-footer-bg-color);
     height: 128px;
-    gap:16px
+    gap: 16px
 }
 
 footer>img {
