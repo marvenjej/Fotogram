@@ -14,20 +14,18 @@ let galleryPictures = [
 ];
 
 function initGalleryFunctions() {
-loadGalleryItem();
-
+    loadGalleryItem();
 }
 
 function loadGalleryItem() {
-    let contentRef = document.getElementById('gallery')
+    let contentRef = document.getElementById('gallery');
     for (let indexGalleryItem = 0; indexGalleryItem < galleryPictures.length; indexGalleryItem++) {
-        contentRef.innerHTML += getNotesTemplate(indexGalleryItem);
+        contentRef.innerHTML += getGalleryItemTemplate(indexGalleryItem);
     }
 }
 
-function getNotesTemplate(indexGalleryItem) {
-    return `<img class="gallery-item" src="./assets/img/${galleryPictures[indexGalleryItem]}" onclick="openDialog(${indexGalleryItem})" alt="Bild aus der Photogallerie">`
-
+function getGalleryItemTemplate(indexGalleryItem) {
+    return `<img class="gallery-item" src="./assets/img/${galleryPictures[indexGalleryItem]}" onclick="openDialog(${indexGalleryItem})" alt="Bild aus der Fotogalerie">`;
 }
 
 let currentIndex = 0;
