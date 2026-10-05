@@ -48,7 +48,7 @@ footer {
     flex-direction: column;
     gap: 16px;
     height: 128px;
-    background-color: var(--header-footer-bg-color);
+    background: var(--main-bg-color) url('../img/footer-curve.svg') center bottom / 100% 100% no-repeat;
 }
 
 footer>img {
@@ -162,6 +162,12 @@ footer>p {
 }
 
 @media (max-width: 700px) {
+    header {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
     .gallery-dialog {
         width: calc(100vw - 32px);
         max-width: 343px;
