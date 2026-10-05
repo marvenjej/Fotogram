@@ -65,3 +65,9 @@ function showPreviousPicture() {
 function closeDialog() {
     document.getElementById('gallery-dialog').close();
 }
+
+function closeDialogOnBackdrop(event) {
+    if (event.target === event.currentTarget) {
+        closeDialog();
+    }
+}

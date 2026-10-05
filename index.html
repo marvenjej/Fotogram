@@ -25,24 +25,26 @@
 
     </main>
 
-    <dialog id="gallery-dialog" class="gallery-dialog">
-        <div class="dialog-header">
-            <h2 id="dialog-title"></h2>
-            <button class="dialog-close" onclick="closeDialog()" aria-label="Schließen">
-                <img src="./assets/icons/close.svg" alt="">
-            </button>
-        </div>
+    <dialog id="gallery-dialog" class="gallery-dialog" onclick="closeDialogOnBackdrop(event)">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 id="dialog-title"></h2>
+                <button class="dialog-close" onclick="closeDialog()" aria-label="Schließen">
+                    <img src="./assets/icons/close.svg" alt="">
+                </button>
+            </div>
 
-        <img id="dialog-img" src="" alt="Großansicht des Bildes">
+            <img id="dialog-img" class="dialog-image" src="" alt="Großansicht des Bildes">
 
-        <div class="dialog-nav">
-            <button class="dialog-arrow" onclick="showPreviousPicture()" aria-label="Vorheriges Bild">
-                <img src="./assets/icons/button-left.svg" alt="">
-            </button>
-            <span id="dialog-counter"></span>
-            <button class="dialog-arrow" onclick="showNextPicture()" aria-label="Nächstes Bild">
-                <img src="./assets/icons/button-right.svg" alt="">
-            </button>
+            <div class="dialog-nav">
+                <button class="dialog-arrow" onclick="showPreviousPicture()" aria-label="Vorheriges Bild">
+                    <img src="./assets/icons/button-left.svg" alt="">
+                </button>
+                <span id="dialog-counter"></span>
+                <button class="dialog-arrow" onclick="showNextPicture()" aria-label="Nächstes Bild">
+                    <img src="./assets/icons/button-right.svg" alt="">
+                </button>
+            </div>
         </div>
     </dialog>
 
