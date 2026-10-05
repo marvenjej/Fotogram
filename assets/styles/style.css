@@ -76,6 +76,11 @@ footer>p {
     border: 2px solid rgba(18, 70, 88, 1);
     border-radius: var(--gallery-item-border-radius);
     cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.gallery-item:hover {
+    border-color: rgba(107, 193, 225, 1);
 }
 
 .gallery-dialog {
@@ -118,8 +123,14 @@ footer>p {
     padding: 0;
     border: none;
     color: inherit;
+    border-radius: 50%;
     background: none;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dialog-close:hover {
+    background-color: rgba(18, 70, 88, 1);
 }
 
 .dialog-image {
