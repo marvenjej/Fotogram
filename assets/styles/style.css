@@ -158,6 +158,11 @@ footer>p {
     font-size: 16px;
 }
 
+.dialog-nav span {
+    width: 5ch;
+    text-align: center;
+}
+
 .dialog-arrow {
     display: flex;
     padding: 0;
