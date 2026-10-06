@@ -57,6 +57,11 @@ function openDialog(indexGalleryItem) {
     currentIndex = indexGalleryItem;
     renderDialog();
     document.getElementById('gallery-dialog').showModal();
+    document.body.style.overflow = 'hidden';
+}
+
+function unlockScroll() {
+    document.body.style.overflow = '';
 }
 
 function renderDialog() {
