@@ -185,6 +185,10 @@ footer>p {
 }
 
 @media (max-width: 700px) {
+    h1 {
+        font-size: clamp(28px, 10vw - 3px, 48px);
+    }
+
     main {
         padding: 40px var(--content-inline) 45px;
     }
