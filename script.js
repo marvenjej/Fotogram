@@ -13,6 +13,21 @@ let galleryPictures = [
     "worldvashemudomu-winter-4742436_1280.jpg"
 ];
 
+let galleryAltTexts = [
+    "Verschneite Berglandschaft in Alaska",
+    "Naturlandschaft mit Wald und Bergen und ein Wasserfall",
+    "Rauchender Vulkan unter dem Himmel",
+    "See umgeben von Bergen und Wald",
+    "Sonnenuntergang mit Silhouetten am Horizont",
+    "Bäume im Nebel eines Waldes",
+    "Steinkauz sitzt auf einem Ast",
+    "Tempel auf Bali vor tropischer Kulisse",
+    "Robben liegen am Strand",
+    "Wasser mit Wellen und Spiegelungen",
+    "Sandstrand mit Meer und Wellen",
+    "Winterlandschaft mit Schnee und Bäumen"
+];
+
 function initGalleryFunctions() {
     loadGalleryItem();
 }
@@ -25,7 +40,7 @@ function loadGalleryItem() {
 }
 
 function getGalleryItemTemplate(indexGalleryItem) {
-    return `<img class="gallery-item" src="./assets/img/${galleryPictures[indexGalleryItem]}" onclick="openDialog(${indexGalleryItem})" alt="Bild aus der Fotogalerie">`;
+    return `<img class="gallery-item" src="./assets/img/${galleryPictures[indexGalleryItem]}" onclick="openDialog(${indexGalleryItem})" alt="${galleryAltTexts[indexGalleryItem]}">`;
 }
 
 let currentIndex = 0;
@@ -40,6 +55,7 @@ function renderDialog() {
     let pictureName = galleryPictures[currentIndex];
 
     document.getElementById('dialog-img').src = `./assets/img/${pictureName}`;
+    document.getElementById('dialog-img').alt = galleryAltTexts[currentIndex];
     document.getElementById('dialog-title').innerText = pictureName.replace('.jpg', '');
     document.getElementById('dialog-counter').innerText = `${currentIndex + 1}/${galleryPictures.length}`;
 }
