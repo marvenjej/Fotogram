@@ -47,7 +47,6 @@ main {
     flex-direction: column;
     gap: 80px;
     flex: 1;
-    min-height: 815px;
     padding: 80px var(--content-inline);
     background-color: var(--main-bg-color);
 }
@@ -90,7 +89,8 @@ footer>p {
     transition: border-color 0.2s;
 }
 
-.gallery-item:hover {
+.gallery-item:hover,
+.gallery-item:focus-visible {
     border-color: rgba(107, 193, 225, 1);
 }
 

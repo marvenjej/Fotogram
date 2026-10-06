@@ -1,4 +1,4 @@
-let galleryPictures = [
+const galleryPictures = [
     "Alaska-810433_1280.jpg",
     "c1ri-nature-5411408_1280.jpg",
     "dominickvietor-volcano-8488486_1280.jpg",
@@ -13,7 +13,7 @@ let galleryPictures = [
     "worldvashemudomu-winter-4742436_1280.jpg"
 ];
 
-let galleryAltTexts = [
+const galleryAltTexts = [
     "Verschneite Berglandschaft in Alaska",
     "Naturlandschaft mit Wald und Bergen und ein Wasserfall",
     "Rauchender Vulkan unter dem Himmel",
@@ -42,9 +42,15 @@ function loadGalleryItem() {
 }
 
 function getGalleryItemTemplate(indexGalleryItem) {
-    return `<img class="gallery-item" src="./assets/img/${galleryPictures[indexGalleryItem]}" onclick="openDialog(${indexGalleryItem})" alt="${galleryAltTexts[indexGalleryItem]}">`;
+    return `<img class="gallery-item" src="./assets/img/${galleryPictures[indexGalleryItem]}" tabindex="0" role="button" onclick="openDialog(${indexGalleryItem})" onkeydown="openDialogOnKey(event, ${indexGalleryItem})" alt="${galleryAltTexts[indexGalleryItem]}">`;
 }
 
+function openDialogOnKey(event, indexGalleryItem) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openDialog(indexGalleryItem);
+    }
+}
 
 
 function openDialog(indexGalleryItem) {
