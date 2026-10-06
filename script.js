@@ -28,6 +28,8 @@ let galleryAltTexts = [
     "Winterlandschaft mit Schnee und Bäumen"
 ];
 
+let currentIndex = 0;
+
 function initGalleryFunctions() {
     loadGalleryItem();
 }
@@ -43,7 +45,7 @@ function getGalleryItemTemplate(indexGalleryItem) {
     return `<img class="gallery-item" src="./assets/img/${galleryPictures[indexGalleryItem]}" onclick="openDialog(${indexGalleryItem})" alt="${galleryAltTexts[indexGalleryItem]}">`;
 }
 
-let currentIndex = 0;
+
 
 function openDialog(indexGalleryItem) {
     currentIndex = indexGalleryItem;
@@ -60,16 +62,11 @@ function renderDialog() {
     document.getElementById('dialog-counter').innerText = `${currentIndex + 1}/${galleryPictures.length}`;
 }
 
-function showNextPicture() {
-    currentIndex++;
+function showPicture(direction) {
+    currentIndex += direction;
     if (currentIndex >= galleryPictures.length) {
         currentIndex = 0;
     }
-    renderDialog();
-}
-
-function showPreviousPicture() {
-    currentIndex--;
     if (currentIndex < 0) {
         currentIndex = galleryPictures.length - 1;
     }

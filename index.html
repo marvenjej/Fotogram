@@ -38,11 +38,11 @@
             <img id="dialog-img" class="dialog-image" src="" alt="Großansicht des Bildes">
 
             <div class="dialog-nav">
-                <button class="dialog-arrow" onclick="showPreviousPicture()" aria-label="Vorheriges Bild">
+                <button class="dialog-arrow" onclick="showPicture(-1)" aria-label="Vorheriges Bild">
                     <img src="./assets/icons/button-left.svg" alt="">
                 </button>
                 <span id="dialog-counter"></span>
-                <button class="dialog-arrow" onclick="showNextPicture()" aria-label="Nächstes Bild">
+                <button class="dialog-arrow" onclick="showPicture(1)" aria-label="Nächstes Bild">
                     <img src="./assets/icons/button-right.svg" alt="">
                 </button>
             </div>
