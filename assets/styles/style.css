@@ -6,6 +6,9 @@
     --content-padding: 16px;
     --content-inline: max(var(--content-padding),
             calc((100% - var(--content-max)) / 2 + var(--content-padding)));
+    --header-padding: 140px;
+    --header-inline: max(var(--header-padding),
+            calc((100% - var(--content-max)) / 2 + var(--header-padding)));
     --gallery-item-border-radius: 16px;
     --dialog-border-radius: 48px;
 }
@@ -33,7 +36,7 @@ h1 {
 header {
     width: 100%;
     height: 80px;
-    padding: 20px var(--content-inline);
+    padding: 20px var(--header-inline);
     background-color: var(--header-footer-bg-color);
 }
 
@@ -170,6 +173,12 @@ footer>p {
 }
 
 @media (max-width: 1130px) {
+    header {
+        display: flex;
+        justify-content: center;
+        padding: 20px var(--content-inline);
+    }
+
     .gallery {
         gap: 16px;
     }
@@ -178,12 +187,6 @@ footer>p {
 @media (max-width: 700px) {
     main {
         padding: 40px var(--content-inline) 45px;
-    }
-
-    header {
-        display: flex;
-        justify-content: center;
-        padding: 20px var(--content-inline);
     }
 
     .gallery-dialog {
